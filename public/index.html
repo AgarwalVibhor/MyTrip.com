@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="MyTrip">
+<head>
+	<title>MyTrip.com_Vibhor</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="./lib/bootstrap.css"> <!-- If we need bootbox dialog box we need bootstrap.css version >3.0.0 and bootstrap.js version >3.0.0 -->
+	<link rel="stylesheet" type="text/css" href="./lib/bootstrap-theme.css">
+	<!--<link rel="stylesheet" type="text/css" href="./lib/bootstrap_2.3.2.css">-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="./lib/toaster.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="./styles/style.css">
+</head>
+<body>
+<div class="container">
+	<nav class="navbar navbar-inverse">
+  
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#"><img data-ng-src="assets/logoMake.png" style="margin-left: 60px; margin-top: -10px; width: 150px; height : 50px;" alt="MakeMyTrip Logo"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"  id="linkHome"><a data-ng-href="#/" class="top"><strong>Home</strong></a></li>
+        <li id="linkResults"><a href="#/results" class="top">Results</a></li>
+        <li id="linkLogin"><a href="#/login" class="top">Login</a></li> 
+        <li id="linkLoad"><a href="#/loadFlights" class="top">Load Flights</a></li> 
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/login"><i class="fa fa-sign-in" aria-hidden="true" style="font-size: 30px;"></i>Login</a></li>
+        <li><a href="#/"><i class="fa fa-sign-out" aria-hidden="true" style="font-size: 30px;"></i>Logout</a></li>
+      </ul>
+    </div>
+  
+</nav>
+</div>
+	<div data-ng-view></div>
+
+	<div class="container-fluid" style="background-color: whitesmoke;">  <!--This color whitesmoke works perfectly -->
+		<div class="row" style="text-align: center;">
+			<h3 class="setHead">Get In Touch With Us !</h3>
+			<hr class="primary">
+			<p class="para"><i>Ready to share your feedback with us? Thats Great! Give us a call or send us an email and we will get back to you as soon as possible. Happy Flying !!!</i></p>
+		</div>
+		<div class="row">
+			<div class="col-md-offset-3 col-md-2" style="margin-left: 400px;">
+				<i class="fa fa-phone" aria-hidden="true" style="font-size: 60px; color: rgb(48,48,48); margin-left: 30px;"></i><br />
+				<h4><a data-ng-href="#" style="color: rgb(48,48,48); font-style: italic;">1800 180 266</a></h4>
+			</div>
+			<div class="col-md-3">
+				<i class="fa fa-envelope" aria-hidden="true" style="font-size: 60px; color: rgb(48,48,48); margin-left: 80px;"></i><br />
+				<h4><a data-ng-href="#" style="color: rgb(48,48,48); font-style: italic;">MyTrip_Vibhor@gmail.com</a></h4>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="./lib/angular.min.js"></script>
+	<script type="text/javascript" src="./lib/angular-route.min.js"></script>
+	<script type="text/javascript" src="./lib/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="./lib/bootstrap.js"></script>
+	<script type="text/javascript" src="./lib/bootbox.js"></script>
+	<script type="text/javascript" src="./lib/toaster.js"></script>
+	<script type="text/javascript" src="./scripts/module.js"></script>
+	<script type="text/javascript" src="./scripts/controllers/HomeController.js"></script>
+	<script type="text/javascript" src="./scripts/controllers/LoadFlightsController.js"></script>
+	<script type="text/javascript" src="./scripts/controllers/ResultsController.js"></script>
+	<script type="text/javascript" src="./scripts/controllers/LoginController.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	
+    
+    <!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</body>
+</html>

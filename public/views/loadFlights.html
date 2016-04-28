@@ -1,0 +1,79 @@
+<div class="load" data-ng-controller="LoadFlightsController" style="margin-top: -20px;">
+	<div class="container-fluid">
+		<div class="col-md-offset-6 col-md-4"> 
+			<form role="form" name="loadForm">
+				<div class="form-group" style="margin-top: 30px;">
+					<label for="departure"><strong>Departure Place :</strong></label> 
+					<select class="form-control" name="departure" id="departure" data-ng-model="departure" data-ng-change="getArrivals(); setWarning1();">
+						<option value="0">Select Departure</option>
+						<option data-ng-repeat="departure in departures" value="{{ departure.id }}">{{ departure.place }}</option>
+					</select>
+					<div class="alert alert-warning" data-ng-show="warning1">
+						<strong>Warning!</strong> You need to select a Departure Place.
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="arrival"><strong>Arrival Place :</strong></label>
+					<select class="form-control" name="arrival" id="arrival" data-ng-model="arrival" data-ng-change="setWarning2();">
+						<option value="0">Select Arrival</option>
+						<option data-ng-repeat="arrival in arrivals" value="{{ arrival.id }}">{{ arrival.place }}</option>
+					</select>
+					<div class="alert alert-warning" data-ng-show="warning2">
+						<strong>Warning!</strong> You need to enter an arrival place
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="date">Date of Journey :</label>
+					<input class="form-control input" type="date" name="date" id="date"  data-ng-model="date" min="{{ minDate }}" max="{{ maxDate }}" data-ng-change="setWarning3();" style="height: 35px;"></input>
+					<div class="alert alert-warning" data-ng-show="warning3">
+						<strong>Warning!</strong> You need to fill out the date.
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="departureTime">Departure Time :</label>
+					<input class="form-control" type="time" name="departureTime" id="departureTime" data-ng-model="departureTime" data-ng-change="setWarning4();" style="height: 35px;"></input>
+					<div class="alert alert-warning" data-ng-show="warning4">
+						<strong>Warning!</strong> You need to fill out the Departure Time.
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="arrivalTime">Arrival Time :</label>
+					<input class="form-control" type="time" name="arrivalTime" id="arrivalTime" data-ng-model="arrivalTime" data-ng-change="setWarning5(); getAirlines();" style="height: 35px;"></input>
+					<div class="alert alert-warning" data-ng-show="warning5">
+						<strong>Warning!</strong> You need to enter the Arrival Time.
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="airline">Airline :</label>
+					<select class="form-control" name="airline" id="airline" data-ng-model="airline" data-ng-change="setWarning6();">
+						<option value="0">Select Airline</option>
+						<option data-ng-repeat="airline in airlines" value="{{ airline.id }}">{{ airline.name }}</option>
+					</select>
+					<div class="alert alert-warning" data-ng-show="warning6">
+						<strong>Warning!</strong> You need to select an Airline.
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="duration">Duration Of Journey :</label>
+					<input type="time" class="form-control" name="duration" id="duration" data-ng-model="duration" data-ng-change="setWarning7();" style="height: 35px;"></input>
+					<div class="alert alert-warning" data-ng-show="warning7">
+						<strong>Warning!</strong> You need to enter the Duration of Journey.
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="price">Price For Journey : (In <i class="fa fa-inr" style="font-size: 20px;"></i>)</label>
+					<input type="number" class="form-control" name="price" id="price" data-ng-model="price"  data-ng-change="setWarning8();" style="height: 35px;"></input>
+					<div class="alert alert-warning" data-ng-show="warning8">
+						<strong>Warning!</strong> You need to enter the price of the journey.
+					</div>
+				</div>
+				<button class="btn btn-danger" value="Load Flight" data-ng-click="checkDetails(); addDetails();">Load Flight</button>
+				<br>
+				<br>
+				<div class="alert alert-success" data-ng-show="added">
+					<strong>Success!</strong> Data has been added successfully to the database.
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

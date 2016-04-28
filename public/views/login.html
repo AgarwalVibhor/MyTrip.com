@@ -1,0 +1,31 @@
+<div class="container-fluid login" data-ng-controller="LoginController" style="margin-top: -20px;">
+	<div class="row">
+		<div class="col-md-offset-2 col-md-4">
+			<form role="form" name="loginForm">
+				<div class="form-group" style="margin-top: 40px;">
+					<label for="username">Username :</label>
+					<input type="text" class="form-control" name="username" id="username" data-ng-model="username" placeholder="Enter your username here" data-ng-change="setWarning1();"></input> 
+					<div class="alert alert-warning" data-ng-show="warning1">
+						<strong>Warning!</strong> You need to enter the Username.
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="password">Password :</label>
+					<input type="password" class="form-control" name="password" id="password" data-ng-model="password" placeholder="Your password here" data-ng-change="setWarning2();"></input>
+					<div class="alert alert-warning" data-ng-show="warning2">
+						<strong>Warning!</strong> Youy need to enter the password.
+					</div>
+				</div>
+				<button class="btn btn-danger" value="Login" data-ng-click="checkLogin();">LOGIN</button>
+				&nbsp;
+				&nbsp;
+				&nbsp;
+				<button class="btn btn-primary" type="reset" data-ng-click="setDanger();">RESET</button>
+				<br>
+				<div class="alert alert-danger" data-ng-show="danger">
+					<strong>Danger!</strong> Either the Username or the Password entered is wrong.
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

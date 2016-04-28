@@ -1,0 +1,35 @@
+{
+	"departures" : [
+					{"id" : "1", "place" : "Srinagar"},
+					{"id" : "2", "place" : "Chennai"},
+					{"id" : "3", "place" : "Chandigarh"},
+					{"id" : "4", "place" : "Ahemdabad"},
+					{"id" : "5", "place" : "Delhi"},
+					{"id" : "6", "place" : "Kolkata"},
+					{"id" : "7", "place" : "Bengaluru"},
+					{"id" : "8", "place" : "Mumbai"},
+					{"id" : "9", "place" : "Trivandrum"},
+					{"id" : "10", "place" : "Pune"}
+	],
+
+	"arrivals" : [
+				   
+					{"id" : "1", "place" : "Srinagar"},
+					{"id" : "2", "place" : "Chennai"},
+					{"id" : "3", "place" : "Chandigarh"},
+					{"id" : "4", "place" : "Ahemdabad"},
+					{"id" : "5", "place" : "Delhi"},
+					{"id" : "6", "place" : "Kolkata"},
+					{"id" : "7", "place" : "Bengaluru"},
+					{"id" : "8", "place" : "Mumbai"},
+					{"id" : "9", "place" : "Trivandrum"},
+					{"id" : "10", "place" : "Pune"}	
+	],
+
+	"airlines" : [
+				   {"id" : "1", "name" : "Air India"},
+				   {"id" : "2", "name" : "Indigo"},
+				   {"id" : "3", "name" : "SpiceJet"},
+				   {"id" : "4", "name" : "Jet Airways"}
+	]
+}

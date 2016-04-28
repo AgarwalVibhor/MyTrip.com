@@ -1,0 +1,80 @@
+<div class="vibhor" data-ng-controller="HomeController" style="margin-top: -20px;">
+<div class="container-fluid">
+	<div>
+		<form name="myForm" role="form">
+			<div class="col-md-offset-1 col-md-3">
+				<div class="form-group" style="margin-top: 60px;">
+					<label for="departure">Departure :</label>
+					<select class="form-control" name="departure" id="departure" data-ng-model="departure" required="" data-ng-change="getArrivals(); setWarning1();">
+						<option value="0" selected>Select Departure</option>
+						<option data-ng-repeat="departure in departures"  value="{{ departure.id }}">{{ departure.place }}</option>
+					</select>
+					<div class="alert alert-warning" data-ng-show="warning1">
+						<!--<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>-->
+						<strong>Warning!</strong> You need to select a Departure Place.
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="arrival">Arrival :</label>
+					<select class="form-control" name="arrival" id="arrival" data-ng-model="arrival" required="" data-ng-change="setWarning2();">
+						<option value="0">Select Arrival</option>
+						<option data-ng-repeat="arrival in arrivals" value="{{ arrival.id }}">{{ arrival.place }}</option>
+					</select>
+					<div class="alert alert-warning" data-ng-show="warning2">
+						<!--<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>-->
+						<strong>Warning!</strong> You need to select an Arrival Place.
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="date">Date Of Journey :</label>
+					<input type="date" name="date" class="manage" id="date" min="{{minDate}}" max="{{ maxDate }}" data-ng-model="date" data-ng-change="setWarning3();" style="height: 35px;"></input>
+					<!-- The min and max in date are of type YYYY-MM-DD -->
+					<div class="alert alert-warning" data-ng-show="warning3">
+						<strong>Warning!</strong> You need to enter the date of the journey.
+					</div>
+				</div>
+				<div class="form-group">
+					<button class="btn btn-danger" value="Find Flights" data-ng-click="findFlights();">Find Flights</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-offset-1 col-md-5">
+			<h3 class="heading"><i class="fa fa-users" aria-hidden="true" style="font-size: 40px; color: red;"></i>Who are we?</h3>
+			<p class="description" style="margin-top: 4px;">We provide trips for you and your family at an exciting place and time with exciting packages. This is just to make your life simple and easy. We are proud that you have appreciated us and will continue to do so for times to come.</p>
+			<br />
+			<button class="btn btn-primary" style="margin-top: 2px;" >Know More<i class="fa fa-chevron-circle-right" aria-hidden="true" style="margin-left: 5px;"></i></button>
+		</div>
+		<div class="col-md-offset-1 col-md-5">
+			<h3 class="heading"><i class="fa fa-hand-pointer-o" aria-hidden="true" style="font-size: 40px; color: red;"></i>Why do you need us?</h3>
+			<ul class="description">
+				<li>You do not have to travel to the shops to look for the packages.</li>
+				<li>You can compare various packages at one place.</li>
+				<li>Prices can also be compared and avail best of discounts.</li>
+				<li>We are here for your services and convenience.</li>
+				<li>You would feel your life easy and comfortable.</li>
+			</ul>
+			<button class="btn btn-primary" style="margin-top: 4px;">Know More<i class="fa fa-chevron-circle-right" aria-hidden="true" style="margin-left: 5px;"></i></button>
+		</div>
+	</div>
+	<hr />
+	<div class="row">
+		<div class="col-md-offset-1 col-md-5">
+			<h3 class="heading"><i class="fa fa-cogs" aria-hidden="true" style="font-size: 40px; color: red;"></i>Our services</h3>
+			<p class="description" style="margin-top: 5px;">We provide trips for you and your family at an exciting place and time with exciting packages. This is just to make your life simple and easy. We are proud that you have appreciated us and will continue to do so for times to come.</p>
+			<br />
+			<button class="btn btn-success" style="margin-top: 4px;">Know More<i class="fa fa-chevron-circle-right" aria-hidden="true" style="margin-left: 5px;"></i></button>
+		</div> 
+		<div class="col-md-offset-1 col-md-5">
+			<h3 class="heading"><i class="fa fa-thumbs-up" aria-hidden="true" style="font-size: 40px; color: red;"></i>What do we do?</h3>
+			<p class="description" style="margin-top: 5px;">We provide trips for you and your family at an exciting place and time with exciting packages. This is just to make your life simple and easy. We are proud that you have appreciated us and will continue to do so for times to come.</p>
+			<br />
+			<button class="btn btn-success" style="margin-top: 4px;">Know More<i class="fa fa-chevron-circle-right" aria-hidden="true" style="margin-left: 5px;"></i></button>
+		</div>
+	</div>
+	<hr />
+</div>

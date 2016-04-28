@@ -1,0 +1,81 @@
+<div class="container" data-ng-controller="ResultsController">
+	<div data-ng-show="condition">
+		<div class="row agarwal">
+			<div class="col-md-3 agarwal1" style="text-align: center;">
+				<h4 class="small">From</h4>
+				<h3>{{ _departure }}&nbsp;<img data-ng-src="./assets/departure.png" alt="Departure Image" style="width: 100px; height: 100px;" /></h3>
+			</div>
+			<div class="col-md-3 agarwal1" style="text-align: center;">
+				<h4 class="small" >To</h4>
+				<h3>{{ _arrival }}&nbsp;<img data-ng-src="./assets/arrival.png" style="width: 100px; height: 100px;" alt="Arrival Image"></h3>
+			</div>
+			<div class="col-md-3 agarwal1" style="text-align: center;">
+				<h4 class="small" style="margin-bottom: 20px;">Departure On</h4>
+				<h3 style="margin-top: 20px;">{{ _date }}</h3>
+			</div>
+			<div class="col-md-3" style="margin-top: 55px; text-align: center;">
+				<button class="btn btn-primary" value="Modify Search" data-ng-click="modifySearch();">+ Modify Search</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="pull-right">
+				<h3 class="flights">Total number of flights : {{ noOfFlights }}</h3>
+			</div>
+		</div>
+		<div class="agarwal">
+			<div class="row head">
+				<div class="col-md-2" style="margin-left: 20px; margin-top: -5px;">
+					<h3>Airline</h3>
+				</div>
+				<div class="col-md-2" style="margin-top: -5px;">
+					<h3 data-ng-click="order('departureTime')">Departure<span class="sortorder" ng-show="predicate === 'departureTime'" ng-class="{reverse:reverse}"></span></h3>
+				</div>
+				<div class="col-md-2" style="margin-left: 15px; margin-top: -5px;">
+					<h3 data-ng-click="order('arrivalTime')">Arrival<span class="sortorder" ng-show="predicate === 'arrivalTime'" ng-class="{reverse:reverse}"></span></h3>
+				</div>
+				<div class="col-md-2" style="margin-left: 4px; margin-top: -5px;">
+					<h3 data-ng-click="order('duration')">Duration<span class="sortorder" ng-show="predicate === 'duration'" ng-class="{reverse:reverse}"></span></h3>
+				</div>
+				<div class="col-md-2" style="margin-left: 12px; margin-top: -5px;">
+					<h3 data-ng-click="order('price')">Price<span class="sortorder" ng-show="predicate === 'price'" ng-class="{reverse:reverse}"></span></h3>
+				</div>
+			</div>
+			<div data-ng-repeat="flight in flights | orderBy:predicate:reverse">
+				<div class="row">
+					<div class="col-md-2">
+						<img data-ng-src="./assets/logo/{{ flight.airline }}" alt="Airline Image" style="height: 100px; width: 100px; margin-top: 5px; margin-bottom: -5px; margin-left: 8px;" />
+					</div>
+					<div class="col-md-2" style="text-align: center; margin-top: 30px;">
+						<strong class="data">{{ flight.departureTime }}</strong>
+						<h5 class="small">HH:MM:SS</h5>
+						<h5 class="small">{{ _departure }}</h5>
+					</div>
+					<div class="col-md-2" style="text-align: center; margin-top: 30px;">
+						<strong class="data">{{ flight.arrivalTime }}</strong>
+						<h5 class="small">HH:MM:SS</h5>
+						<h5 class="small">{{ _arrival }}</h5>
+					</div>
+					<div class="col-md-2" style="text-align: center;margin-top: 30px;">
+						<strong class="data">{{ flight.duration }}</strong>
+						<h5 class="small">HH:MM:SS</h5>
+						<h5 class="small">Non-Stop</h5>
+					</div>
+					<div class="col-md-2" style="text-align: center; margin-top: 30px;">
+						<strong class="data"><i class="fa fa-inr" aria-hidden="true" style="font-size: 30px;"></i>{{ flight.price }}</strong>
+					</div>
+					<div class="col-md-2" style="text-align: center; margin-top: 30px;">
+						<button class="btn btn-danger" value="Book Flight" data-ng-click="showFlightDetails(flight, _departure, _arrival);">Book Flight</button>
+						<h5 class="bottom">+Show Details</h5>
+					</div>
+				</div>
+				<hr class="horizontal" />
+			</div>
+		</div>
+	</div>
+
+	<div data-ng-show="!condition">
+		<h2 class="modifyUp"><img data-ng-src="./assets/error.png" alt="Error Image" style="width: 200px; height: 200px;" />
+		Sorry!! No flights could not be found.</h2>
+		<h3 class="modify">Please modify your search to find flights.</h3>
+	</div>
+</div>
